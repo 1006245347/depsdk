@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cBasic">#10B8D1</color>
+    <color name="cWhite">#ffff</color>
+    <color name="cBlack">#000000</color>
+
+    <color name="cGreyEEEEEE">#EEEEEE</color>
+    <color name="cGrey333333">#333333</color>
+    <color name="cOrangeFFB8664">#fB8664</color>
+    <color name="cYellowFFA900">#ffa900</color>
+    <color name="cGreenB32BC852">#B32BC852</color>
+    <color name="CRedF40C0C">#F40C0C</color>
+</resources>

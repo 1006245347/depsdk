@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 如果带组件化的，功能库都要带库前缀   -->
+    <string name="dep_lib_name">dep sdk</string>
+    <string name="dep_loading">加载中…</string>
+    <string name="dep_load_err">服务错误</string>
+    <string name="dep_load_suc" />
+    <string name="dep_load_failed_network">网络连接已断开</string>
+    <string name="dep_warning_empty">空空如耶!</string>
+    <string name="dep_warning_exit">再按一次退出</string>
+    <string name="dep_upgrade_cancel">下次再说</string>
+    <string name="dep_upgrade_confirm">立即更新</string>
+    <string name="dep_upgrade_version">版本</string>
+    <string name="dep_upgrade_size">包大小</string>
+    <string name="dep_upgrade_time">更新时间</string>
+    <string name="dep_upgrade_info">更新说明</string>
+    <string name="dep_upgrade_come">发现新版可升级</string>
+    <string name="dep_upgrade_already">已是最新版</string>
+
+    <string name="dep_tip_cancel">取消</string>
+    <string name="dep_tip_done">确定</string>
+</resources>
