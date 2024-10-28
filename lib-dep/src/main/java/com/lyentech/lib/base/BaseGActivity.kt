@@ -118,7 +118,7 @@ abstract class BaseGActivity : AppCompatActivity() {
 
     }
 
-    /**取消请求*/
+    /**取消请求,有些状态值需要复位*/
     open fun onLoadCancel(isCancel: Boolean = false) {
         if (isCancel)
             globalVm.viewModelScope.cancel()
@@ -151,7 +151,7 @@ abstract class BaseGActivity : AppCompatActivity() {
                 mLoading?.showLoadFailed(str)
             }
         }
-        printD(mLoading?.getData<String>().toString())
+//        printD("err>"+mLoading?.getData<String>().toString())
     }
 
     /**显示加载的数据为空*/

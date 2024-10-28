@@ -216,8 +216,8 @@ class RetrofitFactory private constructor() {
 
     private fun initOkHttpClient(): OkHttpClient {
         val log = HttpLoggingInterceptor(HttpLoggingInterceptor.Logger { msg ->
-            printD(msg, "okHttp")
-        }).setLevel(HttpLoggingInterceptor.Level.BODY)
+//            printD(msg, "okHttp")
+        }).setLevel(HttpLoggingInterceptor.Level.NONE)
         return OkHttpClient.Builder()
             .addInterceptor(log)
             .connectTimeout(10, TimeUnit.SECONDS) //30

@@ -6,6 +6,7 @@ import android.os.Build
 import android.os.Environment
 import android.text.TextUtils
 import androidx.multidex.MultiDex
+import com.lyentech.lib.global.http.NetworkApi
 import com.lyentech.lib.global.listener.ActivityLifecycleCallbacksImpl
 import com.lyentech.lib.utils.MMKVUtils
 import com.lyentech.lib.utils.printD
@@ -76,10 +77,16 @@ open class CoreApplicationProvider : Application() {
     open fun initApp() {
         GLoading.initDefault(LoadProgressAdapter())
         MMKVUtils.setSavePath(getMainCacheDir()?.absolutePath, "dep", mode = MODE_PRIVATE)
+        NetworkApi(appContext).registerCallback()
     }
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
         MultiDex.install(this) //dex分包
+    }
+
+    override fun onTerminate() {
+        super.onTerminate()
+        NetworkApi.instance?.unregisterCallback()
     }
 }

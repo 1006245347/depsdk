@@ -61,6 +61,6 @@ dependencies {
     api(libs.toast)
     kapt(libs.compiler)
     api(libs.eventbus)
-    annotationProcessor(libs.eventbus.annotation.processor)
+    kapt(libs.eventbus.annotation.processor)
 
 }

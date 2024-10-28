@@ -53,7 +53,7 @@ object ShapeApi {
     fun roundStroke(
         corner: Float = 16f,
         stroke: Float = 4f,
-        strokeColor: Int = UiHelper.getColor(R.color.cBasic),
+        strokeColor: Int = R.color.cBasic,
         tintColor: Int = R.color.cBasic
     ): MaterialShapeDrawable {
         val model = ShapeAppearanceModel.builder()
@@ -138,7 +138,7 @@ fun View.roundX(
 fun View.roundStroke(
     corner: Float = 16f,
     stroke: Float = 4f,
-    strokeColor: Int = UiHelper.getColor(R.color.cBasic),
+    strokeColor: Int =R.color.cBasic,
     tintColor: Int = R.color.cBasic
 ) {
     this.background = ShapeApi.roundStroke(corner, stroke, strokeColor, tintColor)

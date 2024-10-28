@@ -3,7 +3,7 @@
     <!-- 如果带组件化的，功能库都要带库前缀   -->
     <string name="dep_lib_name">dep sdk</string>
     <string name="dep_loading">加载中…</string>
-    <string name="dep_load_err">服务错误</string>
+    <string name="dep_load_err">加载失败</string>
     <string name="dep_load_suc" />
     <string name="dep_load_failed_network">网络连接已断开</string>
     <string name="dep_warning_empty">空空如耶!</string>

@@ -2,9 +2,12 @@ package com.lyentech.lib.base
 
 import android.os.Looper
 import androidx.lifecycle.*
+import com.lyentech.lib.R
 
 import com.lyentech.lib.global.http.LoadStates
 import com.lyentech.lib.global.common.GlobalCode
+import com.lyentech.lib.global.common.UiHelper
+import com.lyentech.lib.utils.NetUtils
 import com.lyentech.lib.utils.printD
 import kotlinx.coroutines.*
 
@@ -95,23 +98,25 @@ abstract class BaseVm() : ViewModel() {
     ) {
         val isMainThread = Thread.currentThread() == Looper.getMainLooper().thread
         try {
-//        printD("${isMainThread} main=${Looper.getMainLooper().thread} ${Thread.currentThread()} ${Looper.myLooper()==Looper.getMainLooper()}")
-//            if (!NetUtil.isConnected(UiHelper.getContext())) {
-//                if (state !is LoadStates.LoadRefresh) {
-//                    if (isMainThread) {
-//                        loadState.value = LoadStates.LoadFail("重新加载")
-//                    } else {
-//                        loadState.postValue(LoadStates.LoadFail("重新加载"))
-//                    }
-//                } else {
-//                    if (isMainThread) {
-//                        loadState.value = LoadStates.LoadFail("重新加载")
-//                    } else {
-//                        loadState.postValue(LoadStates.LoadFail("重新加载"))
-//                    }
-//                }
-//                return
-//            }
+            printD("${isMainThread} main=${Looper.getMainLooper().thread} ${Thread.currentThread()} ${Looper.myLooper() == Looper.getMainLooper()}")
+            if (!NetUtils.isConnected(UiHelper.getContext())) {
+                if (state !is LoadStates.LoadRefresh) {
+                    if (isMainThread) {
+                        loadState.value =
+                            LoadStates.LoadFail(UiHelper.getString(R.string.dep_load_err))
+                    } else {
+                        loadState.postValue(LoadStates.LoadFail(UiHelper.getString(R.string.dep_load_err)))
+                    }
+                } else {
+                    if (isMainThread) {
+                        loadState.value =
+                            LoadStates.LoadFail(UiHelper.getString(R.string.dep_load_err))
+                    } else {
+                        loadState.postValue(LoadStates.LoadFail(UiHelper.getString(R.string.dep_load_err)))
+                    }
+                }
+                return
+            }
             if (state !is LoadStates.LoadRefresh) {
                 if (isMainThread) {
                     loadState.value = state
@@ -142,9 +147,9 @@ abstract class BaseVm() : ViewModel() {
 
     //判断网络状态行为
     private fun judgeAct() {
-//        if (!NetUtil.isConnected(UiHelper.getContext())) {
-//            UiHelper.toast(text = UiHelper.getString(R.string.load_failed_no_network))
-//        }
+        if (!NetUtils.isConnected(UiHelper.getContext())) {
+            UiHelper.toast(text = UiHelper.getString(R.string.dep_load_failed_network))
+        }
     }
 
     //统一处理所有异常信息

@@ -24,6 +24,7 @@ import com.hjq.window.EasyWindow
 import com.lyentech.lib.R
 import com.lyentech.lib.base.uiTask
 import com.lyentech.lib.utils.ActivityStackUtils
+import com.lyentech.lib.utils.ScreenUtils
 import com.lyentech.lib.utils.printD
 import com.permissionx.guolindev.PermissionX
 import kotlinx.coroutines.Dispatchers
@@ -98,12 +99,12 @@ object UiHelper {
         }
     }
 
-    fun toastMsg(activity: FragmentActivity, text: String) {
+    private fun toastMsg(activity: FragmentActivity, text: String) {
         val toast = EasyWindow<EasyWindow<*>>(activity)
             .setContentView(R.layout.toast_msg)
             .setDuration(1000)
             .setGravity(Gravity.CENTER)
-//            .setYOffset(ScreenUtils.dp2px(getContext(), 115.0f))
+            .setYOffset(ScreenUtils.dp2px(getContext(), 115.0f))
         toast.setText(R.id.tvMsg, text)
         toast.show()
     }
@@ -135,14 +136,14 @@ object UiHelper {
         }
     }
 
-    fun toastWarning(activity: FragmentActivity, text: String) {
-//        val toast = EasyWindow<EasyWindow<*>>(activity)
-//            .setContentView(R.layout.toast_warn)
-//            .setDuration(1000)
-//            .setGravity(Gravity.CENTER)
-////            .setYOffset(ScreenUtils.dp2px(activity, 115.0f))
-//        toast.setText(R.id.tvMsg, text)
-//        toast.show()
+    private fun toastWarning(activity: FragmentActivity, text: String) {
+        val toast = EasyWindow<EasyWindow<*>>(activity)
+            .setContentView(R.layout.toast_warn)
+            .setDuration(1000)
+            .setGravity(Gravity.CENTER)
+//            .setYOffset(ScreenUtils.dp2px(activity, 115.0f))
+        toast.setText(R.id.tvMsg, text)
+        toast.show()
     }
 
     @JvmStatic

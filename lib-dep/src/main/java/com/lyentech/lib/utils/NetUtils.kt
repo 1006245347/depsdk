@@ -80,7 +80,7 @@ object NetUtils {
      * 获取当前wifi名字
      */
     @JvmStatic
-    fun getWiFiName(manager: WifiManager): String? {
+    fun getWiFiName(manager: WifiManager): String{
         val wifiInfo = manager.connectionInfo
         val name = wifiInfo.ssid
         return name.replace("\"", "")

@@ -4,6 +4,7 @@ import android.os.Environment
 import androidx.fragment.app.FragmentActivity
 
 import java.io.File
+
 /**
  * @author by jason-何伟杰，2024/10/22
  * des:一些有用的知识或资料
@@ -14,8 +15,16 @@ object MockUtils {
     const val testMp4Url1 =
         "https://gelimall.oss-cn-shenzhen.aliyuncs.com/video/2020/7/28/3b36465c-63de-4419-a3b8-68b192725347.mp4"
 
+    const val testMp4Url2 =
+        "https://gelimall.oss-cn-shenzhen.aliyuncs.com/video/2020/7/28/3b36465c-63de-4419-a3b8-68b192725347.mp4?sign=e3faa595d9dcccb7720d8d3277ee71ab&t=1729746000"
     const val testJpgUrl1 =
         "https://malloss.gree.com/gree-mall-v2/cc06e180c9004c85acd309128d18ff81.jpg"
+
+    const val testGet =
+        "https://venus.leayun.cn/venus/external/commodity/screen/spuUniqueId/detail?spuUniqueId=102253838563540992&clubId=124706646550118400"
+
+    const val testPostJson =
+        "http://offlineretail.leayun.cn/cucomeApi/v1/msg/call" //{"deviceSN":"F4911E69986F","position":"横屏"}
 
     fun saveCsvFile() {
         //https://blog.csdn.net/qq_41657996/article/details/126835887

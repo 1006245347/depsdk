@@ -20,11 +20,13 @@ import org.json.JSONObject
  */
 internal val curLifeScopeTaskMap = hashMapOf<Int, Job>()
 
+internal const val tagI:Int=991
+
 /*Activity作用域下可控的延迟任务*/
 fun FragmentActivity.delayUi(
     defaultDispatcher: CoroutineDispatcher = Dispatchers.Main,
     mills: Long = 1000L,
-    cancelTag: Int = 1,
+    cancelTag: Int = tagI,
     block: suspend CoroutineScope.() -> Unit
 ) {
     val job = lifecycleScope.launch(defaultDispatcher) {
@@ -36,7 +38,7 @@ fun FragmentActivity.delayUi(
 
 fun FragmentActivity.task(
     defaultDispatcher: CoroutineDispatcher = Dispatchers.Default,
-    cancelTag: Int = 3,
+    cancelTag: Int = tagI,
     block: suspend CoroutineScope.() -> Unit
 ) {
     val job = lifecycleScope.launch(defaultDispatcher) { block() }
@@ -45,7 +47,7 @@ fun FragmentActivity.task(
 
 fun FragmentActivity.uiTask(
     defaultDispatcher: CoroutineDispatcher = Dispatchers.Main,
-    cancelTag: Int = 4,
+    cancelTag: Int = tagI,
     block: suspend CoroutineScope.() -> Unit
 ) {
     val job = lifecycleScope.launch(defaultDispatcher) { block() }
@@ -54,7 +56,7 @@ fun FragmentActivity.uiTask(
 
 fun Fragment.uiTask(
     defaultDispatcher: CoroutineDispatcher = Dispatchers.Main,
-    cancelTag: Int = 4,
+    cancelTag: Int = tagI,
     block: suspend CoroutineScope.() -> Unit
 ) {
     val job = lifecycleScope.launch(defaultDispatcher) { block() }
@@ -63,7 +65,7 @@ fun Fragment.uiTask(
 
 fun Fragment.task(
     defaultDispatcher: CoroutineDispatcher = Dispatchers.Default,
-    cancelTag: Int = 3,
+    cancelTag: Int = tagI,
     block: suspend CoroutineScope.() -> Unit
 ) {
     val job = lifecycleScope.launch(defaultDispatcher) { block() }
@@ -71,7 +73,7 @@ fun Fragment.task(
 }
 
 /*会把 lifecycleScope整个协程域相关的任务都停止*/
-fun FragmentActivity.cancelDelay(cancelTag: Int = 1) {
+fun FragmentActivity.cancelDelay(cancelTag: Int = tagI) {
     val job = curLifeScopeTaskMap[cancelTag]
     job?.cancel()
 }
@@ -83,7 +85,7 @@ fun FragmentActivity.launchAty(context: Context, cls: Class<*>?) {
 fun ViewModel.delayTask(
     defaultDispatcher: CoroutineDispatcher = Dispatchers.Default,
     mills: Long = 2000L,
-    cancelTag: Int = 1,
+    cancelTag: Int = tagI,
     block: suspend CoroutineScope.() -> Unit
 ) {
     val job = viewModelScope.launch(defaultDispatcher) {
@@ -93,7 +95,7 @@ fun ViewModel.delayTask(
     curLifeScopeTaskMap[cancelTag] = job //setTag
 }
 
-fun ViewModel.cancelDelay(cancelTag: Int = 1) {
+fun ViewModel.cancelDelay(cancelTag: Int = tagI) {
     val job = curLifeScopeTaskMap[cancelTag]
     job?.cancel()
 }
@@ -143,10 +145,3 @@ fun BaseQuickAdapter<*, *>.addList(list: Collection<Any>?) {
 fun JSONObject.toStr() :String{
     return this.toString().replace("\\","")
 }
-
-
-
-
-
-
-
