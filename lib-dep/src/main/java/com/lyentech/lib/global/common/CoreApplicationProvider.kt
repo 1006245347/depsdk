@@ -78,6 +78,7 @@ open class CoreApplicationProvider : Application() {
         GLoading.initDefault(LoadProgressAdapter())
         MMKVUtils.setSavePath(getMainCacheDir()?.absolutePath, "dep", mode = MODE_PRIVATE)
         NetworkApi(appContext).registerCallback()
+
     }
 
     override fun attachBaseContext(base: Context?) {

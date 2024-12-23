@@ -42,8 +42,11 @@ dependencies {
     api(libs.dex)
 
     //把这全搞成libs arr jar,如何
+
+
     api(libs.glide.core)
     api(libs.glide.okhttp3)
+    kapt(libs.glide.compiler)
     api(libs.rvBase)
     api(libs.immersionBar)
     api(libs.permissionX)
@@ -59,7 +62,7 @@ dependencies {
     api(libs.lifecycle.live)
     api(libs.lifecycle.run)
     api(libs.toast)
-    kapt(libs.compiler)
+
     api(libs.eventbus)
     kapt(libs.eventbus.annotation.processor)
 

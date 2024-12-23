@@ -47,4 +47,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(project(":lib-dep"))
+
+    //    implementation(files("/libs/videocache-2.7.1.aar"))
+//  implementation(files("/libs/slf4j-api-1.7.30.jar"))
 }

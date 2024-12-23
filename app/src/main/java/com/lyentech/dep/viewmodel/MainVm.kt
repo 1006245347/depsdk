@@ -6,6 +6,7 @@ import com.lyentech.lib.global.http.RetrofitFactory
 import com.lyentech.lib.utils.MockUtils
 import com.lyentech.lib.utils.printD
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.flow
 import org.json.JSONObject
 
 class MainVm : BaseVm() {
@@ -36,5 +37,9 @@ class MainVm : BaseVm() {
             val result = RetrofitFactory.doPostJsonRequest(MockUtils.testPostJson, js.toString())
             printD(result)
         }
+    }
+
+    fun testFlow() {
+//        flow<> {  }
     }
 }
