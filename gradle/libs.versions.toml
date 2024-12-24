@@ -10,7 +10,7 @@ appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.3"
 constraintlayout = "2.1.4"
-permission="1.8.0"
+permission = "1.8.0"
 glide = "4.14.2"
 bugly = "4.1.9"
 mmkv = "1.2.13"
@@ -20,8 +20,8 @@ retrofit = "2.9.0"
 lifecycle = "2.5.1"
 toast = "10.62"
 immersion = "3.2.2"
-rv4 = "4.0.0-beta04"
-dex="2.0.1"
+rv4 = "4.1.4"
+dex = "2.0.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -38,20 +38,20 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 lifecycle-model = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 lifecycle-live = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
 lifecycle-run = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
-dex={module="androidx.multidex:multidex",version.ref="dex"}
+dex = { module = "androidx.multidex:multidex", version.ref = "dex" }
 
-permissionX={ group="com.guolindev.permissionx",name="permissionx",version.ref="permission"}
+permissionX = { group = "com.guolindev.permissionx", name = "permissionx", version.ref = "permission" }
 glide-core = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 glide-okhttp3 = { module = "com.github.bumptech.glide:okhttp3-integration", version.ref = "glide" }
 glide-compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
-rvBase = { module = "io.github.cymchad:BaseRecyclerViewAdapterHelper", version.ref = "rv4" }
+rvBase = { module = "io.github.cymchad:BaseRecyclerViewAdapterHelper4", version.ref = "rv4" }
 immersionBar = { module = "com.geyifeng.immersionbar:immersionbar", version.ref = "immersion" }
 
 bugly = { module = "com.tencent.bugly:crashreport", version.ref = "bugly" }
 mmkv = { module = "com.tencent:mmkv", version.ref = "mmkv" }
 httpDownload = { module = "com.coolerfall:android-http-download-manager", version.ref = "cool" }
 ok3-core = { module = "com.squareup.okhttp3:okhttp", version.ref = "ok3" }
-ok3-sse = { module = "com.squareup.okhttp3:okhttp-sse",version.ref="ok3"}
+ok3-sse = { module = "com.squareup.okhttp3:okhttp-sse", version.ref = "ok3" }
 
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }

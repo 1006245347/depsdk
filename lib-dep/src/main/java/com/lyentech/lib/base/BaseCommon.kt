@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
-import com.chad.library.adapter.base.BaseQuickAdapter
+import com.chad.library.adapter4.BaseQuickAdapter
 import com.lyentech.lib.global.common.UiHelper
 import com.lyentech.lib.global.common.UiHelper.clickFilter
 import kotlinx.coroutines.*

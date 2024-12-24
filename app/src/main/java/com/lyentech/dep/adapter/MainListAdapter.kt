@@ -3,8 +3,8 @@ package com.lyentech.dep.adapter
 import android.content.Context
 import android.view.ViewGroup
 import android.widget.TextView
-import com.chad.library.adapter.base.BaseQuickAdapter
-import com.chad.library.adapter.base.viewholder.QuickViewHolder
+import com.chad.library.adapter4.BaseQuickAdapter
+import com.chad.library.adapter4.viewholder.QuickViewHolder
 import com.lyentech.dep.R
 import com.lyentech.lib.widget.shape.roundStroke
 

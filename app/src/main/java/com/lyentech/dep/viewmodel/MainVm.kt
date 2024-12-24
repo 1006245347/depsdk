@@ -14,7 +14,9 @@ class MainVm : BaseVm() {
     fun testGetUrl() {
         launch(state = LoadStates.Loading()) {
             delay(1500)
+
             gets()
+
         }
     }
 
@@ -39,7 +41,5 @@ class MainVm : BaseVm() {
         }
     }
 
-    fun testFlow() {
-//        flow<> {  }
-    }
+
 }
