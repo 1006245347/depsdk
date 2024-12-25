@@ -1,6 +1,9 @@
 package com.lyentech.dep.ui
 
 import android.view.View
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lyentech.dep.R
@@ -17,6 +20,7 @@ import com.lyentech.lib.widget.shape.ShapeApi
 import com.lyentech.lib.widget.shape.divider
 import com.lyentech.lib.widget.shape.round
 import com.lyentech.lib.widget.shape.setRoundEle
+import kotlinx.coroutines.launch
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -87,6 +91,16 @@ class MainActivity : BaseGActivity() {
         super.buildEdge()
     }
 
+    //生命周期响应协程的数据发送
+    fun lifecycleDeal() {
+        lifecycleScope.launch {
+            //同样表示只有在Activity处于Started状态的情况下，协程中的代码才会执行。
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+            //每次都重新开始也不太好呀
+            }
+        }
+    }
+
     @Subscribe(threadMode = ThreadMode.MAIN)
     public fun onNetEvent(netStatusBean: NetStatusBean) {
         if (netStatusBean.tag == NetStatusBean.SUC) {
@@ -100,6 +114,7 @@ class MainActivity : BaseGActivity() {
         super.onDestroy()
         EventBus.getDefault().unregister(this)
     }
+
     override fun getLayoutId(): Int {
         return R.layout.activity_main
     }
