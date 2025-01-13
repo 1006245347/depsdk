@@ -62,15 +62,17 @@ dependencies {
     api(libs.glide.core)
     api(libs.glide.okhttp3)
     kapt(libs.glide.compiler) //kapt本地报错
-//    api(libs.immersionBar)
-//    api(libs.permissionX)
-//    api(libs.bugly)
-//    api(libs.mmkv)
-//    api(libs.httpDownload)
-//    api(libs.toast)
-//    api(libs.eventbus)
+    api(libs.immersionBar)
+    api(libs.permissionX)
+    api(libs.bugly)
+    api(libs.mmkv)
+    api(libs.httpDownload)
+    api(libs.toast)
+    api(libs.eventbus)
     kapt(libs.eventbus.annotation.processor)
 
+    //Direct local .aar file dependencies are not supported when building an AAR. The resulting AAR would be broken because the class
+    //es and Android resources from any local .aar file dependencies would not be packaged in the resulting AAR.
 //    api(files("/libs/glide-4.14.2.aar"))
 //    api(files("/libs/gifdecoder-4.14.2.aar"))
 //    api(files("/libs/annotations-4.14.2.jar"))//    api(files("/libs/disklrucache-4.14.2.jar"))
@@ -78,39 +80,28 @@ dependencies {
 //    kapt(files("/libs/compiler-4.14.2.jar"))
 
     //把这全搞成libs arr jar,如何
-    api(files("/libs/immersionbar-3.2.2.aar"))
-    api(files("/libs/permissionx-1.8.0.aar"))
-    api(files("/libs/crashreport-4.1.9.aar"))
-    api(files("/libs/mmkv-1.2.13.aar"))
-    api(files("/libs/android-http-download-manager-2.0.0.aar"))
-    api(files("/libs/EasyWindow-10.62.aar"))
-    api(files("/libs/eventbus-3.2.0.jar"))
+//    api(files("/libs/immersionbar-3.2.2.aar"))
+//    api(files("/libs/permissionx-1.8.0.aar"))
+//    api(files("/libs/crashreport-4.1.9.aar"))
+//    api(files("/libs/mmkv-1.2.13.aar"))
+//    api(files("/libs/android-http-download-manager-2.0.0.aar"))
+//    api(files("/libs/EasyWindow-10.62.aar"))
+//    api(files("/libs/eventbus-3.2.0.jar"))
 //    kapt(files("/libs/eventbus-annotation-processor-3.2.0.jar"))
 }
 
-//打包源码
-val sourcesJar by tasks.registering(Jar::class) {
-    //如果没有配置main会报错
-    from(sourceSets["main"].allSource)
-    archiveClassifier.set("sources")
-}
+
 
 publishing {
-    //配置maven仓库
-    repositories {
-        maven {
-            //当前项目根目录
-            url = uri("https://gitee.com/zhheweijie/depsdk.git")//	https://gitee.com/zhheweijie/depsdk.git
-        }
-    }
     publications {
-        create<MavenPublication>("mavenJava") {
-            artifact(sourcesJar)
-            afterEvaluate { artifact(tasks.getByName("bundleReleaseAar")) }
-            groupId = "com.ly.lib"
-            artifactId = "ly"
+        register<MavenPublication>("release") {
+            groupId = "com.lyentech"
+            artifactId = "dep"
             version = "0.0.1"
-        }
 
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
     }
 }
