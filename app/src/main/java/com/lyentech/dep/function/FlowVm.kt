@@ -170,11 +170,11 @@ class FlowVm : BaseVm() {
     )
 
     //要涉及非粘性，用MutableSharedFlow，消费者启动前都不保留数据
-    private  val _loginFlow = MutableSharedFlow<String>() //不需初始化
-    val loginFlow=_loginFlow.asSharedFlow()
+    private val _loginFlow = MutableSharedFlow<String>() //不需初始化
+    val loginFlow = _loginFlow.asSharedFlow()
     fun startLogin() {
         viewModelScope.launch {
-            _loginFlow.emit("suc")
+            _loginFlow.emit("suc")//发送没有value的方式
         }
     }
 }
