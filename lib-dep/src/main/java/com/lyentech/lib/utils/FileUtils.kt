@@ -364,7 +364,7 @@ object FileUtils {
         }
         var hv: String
         for (i in src.indices) {
-            hv = Integer.toHexString(src[i].toInt() and 0xFF).toUpperCase()
+            hv = Integer.toHexString(src[i].toInt() and 0xFF).uppercase()
             if (hv.length < 2) {
                 builder.append(0)
             }

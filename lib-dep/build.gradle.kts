@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.lyentech.lib"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 24
@@ -64,12 +64,17 @@ dependencies {
     kapt(libs.glide.compiler) //kapt本地报错
     api(libs.immersionBar)
     api(libs.permissionX)
-    api(libs.bugly)
     api(libs.mmkv)
     api(libs.httpDownload)
     api(libs.toast)
     api(libs.eventbus)
-    kapt(libs.eventbus.annotation.processor)
+
+    api(files("/libs/umeng-apm-v2.0.6"))
+    api(files("/libs/umeng-asms-v1.8.7"))
+    api(files("/libs/umeng-common-9.8.8"))
+    api(files("/libs/uyumao-1.1.4"))
+
+//    kapt(libs.eventbus.annotation.processor)
 
     //Direct local .aar file dependencies are not supported when building an AAR. The resulting AAR would be broken because the class
     //es and Android resources from any local .aar file dependencies would not be packaged in the resulting AAR.

@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.lyentech.dep"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.lyentech.dep"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -42,6 +42,9 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    //本地代码依赖测试
     implementation(project(":lib-dep"))
 
+    //远端发布成功  要接入 maven { setUrl("https://jitpack.io") }
+//    implementation("com.gitee.zhheweijie:depsdk:0.0.1")
 }

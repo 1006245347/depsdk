@@ -266,35 +266,6 @@ object GlobalCode {
         }
     }
 
-    /** 根据它的名字启动一个应用*/
-    @JvmStatic
-    fun launchApp(context: Context, label: String) {
-        if (TextUtils.isEmpty(label)) {
-            UiHelper.toast(text = "Can't not open application")
-            return
-        }
-        try {
-            var packageName = ""
-            val pm = context.packageManager
-            val packList = pm.getInstalledPackages(0)
-            for (i in packList.indices) {
-                val info = packList[i]
-                if (pm.getApplicationLabel(info.applicationInfo).toString() == label) {
-                    packageName = info.applicationInfo.packageName
-                    break
-                }
-            }
-            if (TextUtils.isEmpty(packageName)) {
-                UiHelper.toast(text = "没有安装应用 $label")
-                return
-            }
-            val intent = context.packageManager.getLaunchIntentForPackage(packageName)
-            context.startActivity(intent)
-        } catch (e: java.lang.Exception) {
-            e.printStackTrace()
-        }
-    }
-
     fun refreshDir(file: File) {
         MediaScannerConnection.scanFile(
             UiHelper.getContext(),

@@ -176,12 +176,12 @@ object UiHelper {
     }
 
     @JvmStatic
-    fun getVersionName(): String {
+    fun getVersionName(): String? {
         val packageManager: PackageManager = getContext().packageManager
         try {
             val packageInfo: PackageInfo =
                 packageManager.getPackageInfo(getContext().packageName, 0)
-            return packageInfo.versionName
+            return packageInfo?.versionName
         } catch (e: PackageManager.NameNotFoundException) {
             e.printStackTrace()
         }
@@ -261,7 +261,7 @@ object UiHelper {
         if (APP_NAME_CACHE.containsKey(pInfo.packageName)) {
             return APP_NAME_CACHE.get(pInfo.packageName) + ""
         }
-        val label = pInfo.applicationInfo.loadLabel(pm).toString()
+        val label = pInfo.applicationInfo?.loadLabel(pm).toString()
         APP_NAME_CACHE[pInfo.packageName] = label
         return label
     }
@@ -347,7 +347,7 @@ object UiHelper {
             printD("当前设备型号为:${Build.MANUFACTURER}")
             var componentName: ComponentName? = null
             val brand = Build.BRAND
-            when (brand.toLowerCase()) {
+            when (brand.lowercase()) {
                 "samsung" -> {
                     componentName = ComponentName(
                         "com.samsung.android.sm",
