@@ -80,7 +80,7 @@ publishing {//https://jitpack.io
         register<MavenPublication>("release") {
             groupId = "com.lyentech"
             artifactId = "dep"
-            version = "0.0.2"
+            version = "0.2.1"
 
             afterEvaluate {
                 from(components["release"])

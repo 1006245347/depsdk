@@ -42,8 +42,8 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     //本地代码依赖测试
-    implementation(project(":lib-dep"))
+//    implementation(project(":lib-dep"))
 
     //远端发布成功  要接入 maven { setUrl("https://jitpack.io") }
-//    implementation("com.gitee.zhheweijie:depsdk:0.0.2") //我的是gitee
+    implementation("com.gitee.zhheweijie:depsdk:0.2.1") //我的是gitee
 }
