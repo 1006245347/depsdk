@@ -10,6 +10,7 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
         maven { setUrl("https://jitpack.io") }
+        maven { setUrl("https://repo1.maven.org/maven2/")  }
     }
 }
 dependencyResolutionManagement {
@@ -18,6 +19,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven { setUrl("https://jitpack.io") }
+        maven { setUrl("https://repo1.maven.org/maven2/")  }
     }
 }
 

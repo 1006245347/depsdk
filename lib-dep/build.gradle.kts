@@ -69,32 +69,10 @@ dependencies {
     api(libs.toast)
     api(libs.eventbus)
 
-    api(files("/libs/umeng-apm-v2.0.6"))
-    api(files("/libs/umeng-asms-v1.8.7"))
-    api(files("/libs/umeng-common-9.8.8"))
-    api(files("/libs/uyumao-1.1.4"))
-
-//    kapt(libs.eventbus.annotation.processor)
-
-    //Direct local .aar file dependencies are not supported when building an AAR. The resulting AAR would be broken because the class
-    //es and Android resources from any local .aar file dependencies would not be packaged in the resulting AAR.
-//    api(files("/libs/glide-4.14.2.aar"))
-//    api(files("/libs/gifdecoder-4.14.2.aar"))
-//    api(files("/libs/annotations-4.14.2.jar"))//    api(files("/libs/disklrucache-4.14.2.jar"))
-//    api(files("/libs/okhttp3-integration-4.14.2.aar")) //glide
-//    kapt(files("/libs/compiler-4.14.2.jar"))
-
-    //把这全搞成libs arr jar,如何
-//    api(files("/libs/immersionbar-3.2.2.aar"))
-//    api(files("/libs/permissionx-1.8.0.aar"))
-//    api(files("/libs/crashreport-4.1.9.aar"))
-//    api(files("/libs/mmkv-1.2.13.aar"))
-//    api(files("/libs/android-http-download-manager-2.0.0.aar"))
-//    api(files("/libs/EasyWindow-10.62.aar"))
-//    api(files("/libs/eventbus-3.2.0.jar"))
-//    kapt(files("/libs/eventbus-annotation-processor-3.2.0.jar"))
+    api(libs.um.core)
+    api(libs.um.asms)
+    api(libs.um.apm)
 }
-
 
 
 publishing {//https://jitpack.io

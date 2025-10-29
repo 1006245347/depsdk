@@ -45,5 +45,5 @@ dependencies {
     implementation(project(":lib-dep"))
 
     //远端发布成功  要接入 maven { setUrl("https://jitpack.io") }
-//    implementation("com.gitee.zhheweijie:depsdk:0.0.2")
+//    implementation("com.gitee.zhheweijie:depsdk:0.0.2") //我的是gitee
 }

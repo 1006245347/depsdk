@@ -21,6 +21,9 @@ toast = "10.62"
 immersion = "3.2.2"
 rv4 = "4.1.4"
 dex = "2.0.1"
+umcore="9.4.4"
+umasms="1.4.1"
+umapm="1.5.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -55,6 +58,10 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit
 retrofit-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 ok3-log = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "ok3" }
 toast = { module = "com.github.getActivity:EasyWindow", version.ref = "toast" }
+
+um-core={ module = "com.umeng.umsdk:common",version.ref="umcore"}
+um-asms={ module ="com.umeng.umsdk:asms",version.ref="umasms"}
+um-apm={ module ="com.umeng.umsdk:apm",version.ref="umapm"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
